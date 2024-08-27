@@ -40,9 +40,10 @@ function createGrid(rows, cols) {
             const box = document.createElement('div');
             box.className = 'box';
             boxRow.appendChild(box);
-
         };
     };
+    console.log("HOVER LISTENERS ACTIVATED");
+    addBoxHoverListeners();
 };
 
 function removeGrid() {
@@ -51,3 +52,16 @@ function removeGrid() {
     gridContainer.className = "grid-container";
     container.appendChild(gridContainer);
 }
+
+function addBoxHoverListeners() {
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach((box) => {
+        box.addEventListener("mouseover", (e) => {
+            console.log(e.target.style.opacity);
+            let opacity = Number(e.target.style.opacity);
+            console.log(opacity);
+            opacity = opacity + 0.1;
+            e.target.style.opacity = String(opacity);
+        });
+    });
+};
