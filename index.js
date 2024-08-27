@@ -5,16 +5,16 @@ const button = document.querySelector('button');
 
 button.addEventListener("click", (e) => {
     // console.log(e.target);
-    const col_input = document.querySelector('.cols');
-    const row_input = document.querySelector('.rows');
-    let col = Number(col_input.value);
-    let row = Number(row_input.value);
+    const squaresInput = document.querySelector('.cols');
+    // const row_input = document.querySelector('.rows');
+    let squares = Number(squaresInput.value);
+    // let row = Number(row_input.value);
     // console.log(typeof(col));
     // console.log(typeof(row));
-    if (Number.isInteger(col) && Number.isInteger(row) && col <= 100 && row <= 100 && col > 0 && row > 0) {
+    if (Number.isInteger(squares) && squares  && squares > 0) {
         // console.log('Ok.');
         removeGrid()
-        createGrid(row, col);
+        createGrid(squares, squares);
     } else {
         alert("Invalid Inputs")
     }
